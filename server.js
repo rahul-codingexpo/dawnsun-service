@@ -33,6 +33,10 @@ app.use("/api/leaves", leave);
 app.use("/api/access-request", accessRoutes);
 app.use("/api/logs", logRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API is working ✅");
+});
+
 // MongoDB connection
 mongoose
   .connect(process.env.MONGO_URI, {
